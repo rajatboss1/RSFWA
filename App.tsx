@@ -7,13 +7,29 @@ import ContactModal from './components/ContactModal';
 import AIAssistant from './components/AIAssistant';
 import OnboardingModal from './components/OnboardingModal';
 
+// #region agent log
+fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:9',message:'App.tsx module loaded - imports succeeded',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'D'})}).catch(()=>{});
+// #endregion
+
 const App: React.FC = () => {
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:14',message:'App component function called',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
+  
   const [view, setView] = useState<'deck' | 'cv'>('deck');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
+    // #region agent log
+    fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:24',message:'App useEffect running',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+    
     const isComplete = localStorage.getItem('onboardingComplete');
+    // #region agent log
+    fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:30',message:'localStorage check',data:{onboardingComplete:isComplete},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+    
     if (!isComplete) {
       setShowOnboarding(true);
     }
@@ -24,6 +40,10 @@ const App: React.FC = () => {
     setShowOnboarding(false);
   };
 
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'App.tsx:42',message:'App render - returning JSX',data:{view,isContactOpen,showOnboarding},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
+  
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden fixed inset-0 selection:bg-orange-100 selection:text-orange-600">
       <div className="absolute inset-0 bg-fitpass-grid -z-10" />

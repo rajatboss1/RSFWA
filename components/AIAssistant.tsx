@@ -2,6 +2,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from '@google/genai';
 
+// #region agent log
+fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'AIAssistant.tsx:4',message:'AIAssistant module loaded - GoogleGenAI imported',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'D'})}).catch(()=>{});
+// #endregion
+
 interface Message {
   role: 'user' | 'model';
   text: string;

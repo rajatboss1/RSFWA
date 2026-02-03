@@ -14,6 +14,10 @@ const SKILLS = [
 ];
 
 const OnboardingModal: React.FC<OnboardingModalProps> = ({ onComplete }) => {
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/3546312d-2b7a-4d7c-86c5-b3b2cdc98a8a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'OnboardingModal.tsx:17',message:'OnboardingModal component called',data:{},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'C'})}).catch(()=>{});
+  // #endregion
+  
   const [rating, setRating] = useState(0);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [isAutoFilled, setIsAutoFilled] = useState(false);
